@@ -1,0 +1,16 @@
+
+.vscode/
+gos-live/.build/
+gos-live/binary/
+gos-live/cache/
+gos-live/chroot/
+gos-live/binary.modified_timestamps
+gos-live/build.log
+gos-live/chroot.files
+gos-live/chroot.packages.install
+gos-live/chroot.packages.live
+gos-live/live-image-amd64.contents
+gos-live/live-image-amd64.files
+gos-live/live-image-amd64.hybrid.iso
+gos-live/live-image-amd64.hybrid.iso.zsync
+gos-live/live-image-amd64.packages

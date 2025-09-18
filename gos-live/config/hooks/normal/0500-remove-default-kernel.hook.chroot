@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# 保留 liquorix 内核
+apt-mark hold linux-image-liquorix-amd64
+
+# 移除默认内核（保留 liquorix）
+apt-get remove --purge -y linux-image-*-amd64 linux-image-amd64 || true
+
+
