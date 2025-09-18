@@ -33,7 +33,7 @@ jobs:
 
       # Upload
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts-${{ github.ref_name }}
           path: |
@@ -42,4 +42,4 @@ jobs:
             gos-live/live-image-amd64.files
             gos-live/live-image-amd64.contents
             gos-live/build.log
-          retention-days: 30
+          retention-days: 5
