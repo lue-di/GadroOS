@@ -24,6 +24,5 @@ chmod +x $HOST_WORKDIR/local/scripts/docker-init.sh
 echo "==> 创建并启动容器 $CONTAINER_NAME，挂载工作目录 $HOST_WORKDIR"
 docker run -it --privileged --name $CONTAINER_NAME \
     -v "$HOST_WORKDIR":/workspace \
-    -e all_proxy=socks5://10.10.10.12:7890 \
     docker.m.daocloud.io/debian:$DEBIAN_VERSION /bin/bash -c "/workspace/local/scripts/docker-init.sh"
 
