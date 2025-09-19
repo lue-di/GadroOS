@@ -14,4 +14,5 @@ sed -i 's#https://mirrors.tuna.tsinghua.edu.cn/debian#http://deb.debian.org/debi
 
 lb build
 
+exit $?
 
