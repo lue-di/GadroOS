@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e
+
+#
+#PACKAGES=(
+#  build-essential
+#  gcc
+#  g++
+#  make
+#  binutils
+#  cpp
+#  pkg-config
+#  nvidia-*
+#  glx-alternative-nvidia
+#  firmware-nvidia-*
+#  atmel-firmware
+#  dahdi-firmware-nonfree
+#)
+#
+#echo "Checking and removing development packages..."
+#
+#for pkg in "${PACKAGES[@]}"; do
+#    if dpkg -s "$pkg" >/dev/null 2>&1; then
+#        echo "Removing $pkg..."
+#        apt-get remove --purge -y "$pkg"
+#    else
+#        echo "$pkg is not installed, skipping."
+#    fi
+#done
+#
+## 自动清理依赖
+#apt-get autoremove --purge -y
+#apt-get clean
+#
+#echo "Unused packages removal completed."

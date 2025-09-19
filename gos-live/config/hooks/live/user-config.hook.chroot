@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# 创建默认用户
+USERNAME="gadro"
+PASSWORD="admin"
+
+useradd -m -s /bin/bash "$USERNAME"
+echo "$USERNAME:$PASSWORD" | chpasswd
+
+# 将用户添加到 sudo 组
+usermod -aG sudo "$USERNAME"

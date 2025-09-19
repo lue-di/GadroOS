@@ -4,14 +4,22 @@ set -e
 LINUX_KERNEL="Liquorix" # Liquorix or XanMod 
 
 
+lb clean
 
 
 lb config noauto \
             --distribution bookworm \
+            --debootstrap-options "--variant=minbase" \
+            --memtest memtest86+ \
             --architecture amd64 \
-            --bootappend-live "boot=live components" \
+            --bootappend-live "boot=live components nottyautologin nosplash" \
             --apt-recommends false \
+            --apt-indices false \
+            --apt-secure false \
+            --chroot-squashfs-compression-type xz \
+            --compression xz \
             --debian-installer none \
+            --interactive false \
             --cache-indices false \
             --archive-areas "main contrib non-free non-free-firmware" \
             --initramfs live-boot \
@@ -19,14 +27,18 @@ lb config noauto \
             --iso-publisher "GadroOS Projet Powered by luedi" \
             --iso-volume "GadroOS Live" \
             --iso-preparer "GadroOS with live build @LB_VERSION@;" \
-            --linux-packages "" \
+            --linux-packages "linux-image-liquorix" \
             --binary-filesystem fat32 \
             --zsync false \
-            --mirror-binary https://deb.debian.org/debian \
-            --mirror-binary-security https://deb.debian.org/debian-security \
-            --mirror-bootstrap https://deb.debian.org/debian \
-            --mirror-chroot https://deb.debian.org/debian \
-            --mirror-chroot-security https://deb.debian.org/debian-security \
-            --mirror-debian-installer https://deb.debian.org/debian \
+            --updates false \
+            --security false \
+            --loadlin false \
+            --uefi-secure-boot enable \
+            --mirror-binary https://mirrors.tuna.tsinghua.edu.cn/debian \
+            --mirror-binary-security https://mirrors.tuna.tsinghua.edu.cn/debian-security \
+            --mirror-bootstrap https://mirrors.tuna.tsinghua.edu.cn/debian \
+            --mirror-chroot https://mirrors.tuna.tsinghua.edu.cn/debian \
+            --mirror-chroot-security https://mirrors.tuna.tsinghua.edu.cn/debian-security \
+            --mirror-debian-installer https://mirrors.tuna.tsinghua.edu.cn/debian \
             "${@}" \
             --debug 

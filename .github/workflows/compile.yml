@@ -29,6 +29,7 @@ jobs:
           set -Eeuo pipefail
           docker run --rm --privileged \
             -v ${{ github.workspace }}/gos-live:/workspace \
+            -v /etc/timezone:/etc/timezone \
             -w /workspace \
             debian:bookworm \
             /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
@@ -37,7 +38,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts-${{ github.ref_name }}
+          name: GadroOS-Arifacts-${{ github.ref_name }}
           path: |
             gos-live/live-image-amd64.hybrid.iso
             gos-live/live-image-amd64.packages

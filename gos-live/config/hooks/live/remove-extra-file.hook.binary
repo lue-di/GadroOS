@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Removing Extra inird and vmlinuz"
+rm -f binary/live/initrd.img-*
+rm -f binary/live/vmlinuz-*

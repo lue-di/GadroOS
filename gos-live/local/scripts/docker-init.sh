@@ -11,7 +11,7 @@ sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.s
 sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources      
 echo '==> Update Apt Package...'
 apt-get update && apt-get upgrade -y
-apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl # curl gpg ca-certificates apt-transport-https lsb-release wget
+apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl curl gpg ca-certificates apt-transport-https lsb-release wget
 # mkdir -p /etc/apt/{sources.list.d,keyrings}
 # chmod 0755 /etc/apt/{sources.list.d,keyrings}
 # keyring_url='https://liquorix.net/liquorix-keyring.gpg'

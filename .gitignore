@@ -1,5 +1,6 @@
-
+.idea/
 .vscode/
+
 gos-live/.build/
 gos-live/binary/
 gos-live/cache/
