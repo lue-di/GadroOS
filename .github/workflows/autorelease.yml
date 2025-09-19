@@ -46,3 +46,21 @@ jobs:
             gos-live/live-image-amd64.contents
             gos-live/build.log
           retention-days: 5
+      # 自动发布 Beta Release
+      - name: Create GitHub Release (beta)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Beta Release ${{ github.ref_name }}"
+          body: |
+            🚀 自动构建的 Beta 版本  
+            - ISO: live-image-amd64.hybrid.iso  
+          prerelease: true
+          files: |
+            gos-live/live-image-amd64.hybrid.iso
+            gos-live/live-image-amd64.packages
+            gos-live/live-image-amd64.files
+            gos-live/live-image-amd64.contents
+            gos-live/build.log
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
