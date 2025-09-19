@@ -33,6 +33,8 @@ apt-get update -y
 cd /workspace || exit
 echo '==> Enter /workspace '
 
+sed -i 's#https://mirrors.tuna.tsinghua.edu.cn/debian#http://deb.debian.org/debian#g' "/workspace/config/bootstrap"
+
 lb build
 
-sed -i 's#https://mirrors.tuna.tsinghua.edu.cn/debian#http://deb.debian.org/debian#g' "/workspace/config/bootstrap"
+
