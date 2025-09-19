@@ -1,8 +1,6 @@
 #!/bin/sh
 
 set -e
-LINUX_KERNEL="Liquorix" # Liquorix or XanMod 
-
 
 lb clean
 
@@ -40,5 +38,5 @@ lb config noauto \
             --mirror-chroot https://mirrors.tuna.tsinghua.edu.cn/debian \
             --mirror-chroot-security https://mirrors.tuna.tsinghua.edu.cn/debian-security \
             --mirror-debian-installer https://mirrors.tuna.tsinghua.edu.cn/debian \
-            "${@}" \
-            --debug 
+            --debug \
+            "${@}"

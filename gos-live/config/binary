@@ -7,10 +7,10 @@ LB_IMAGE_TYPE="iso-hybrid"
 LB_BINARY_FILESYSTEM="fat32"
 
 # Set apt/aptitude generic indices
-LB_APT_INDICES="true"
+LB_APT_INDICES="false"
 
 # Set boot parameters
-LB_BOOTAPPEND_LIVE="boot=live components"
+LB_BOOTAPPEND_LIVE="boot=live components nottyautologin nosplash"
 
 # Set boot parameters
 LB_BOOTAPPEND_INSTALL=""
@@ -31,7 +31,7 @@ LB_BOOTLOADERS=""
 LB_CHECKSUMS="sha256"
 
 # Set compression
-LB_COMPRESSION="none"
+LB_COMPRESSION="xz"
 
 # Support dm-verity on rootfs
 LB_DM_VERITY=""
@@ -77,7 +77,7 @@ LB_ISO_APPLICATION="GadroOS"
 LB_ISO_PREPARER="GadroOS with live build @LB_VERSION@;"
 
 # Set iso publisher
-LB_ISO_PUBLISHER="GadroOS Project Powered by luedi"
+LB_ISO_PUBLISHER="GadroOS Projet Powered by luedi"
 
 # Set iso volume (max 32 chars)
 LB_ISO_VOLUME="GadroOS Live"
@@ -86,7 +86,7 @@ LB_ISO_VOLUME="GadroOS Live"
 LB_JFFS2_ERASEBLOCK=""
 
 # Set memtest
-LB_MEMTEST="none"
+LB_MEMTEST="memtest86+"
 
 # Set loadlin
 LB_LOADLIN="false"
@@ -116,4 +116,4 @@ LB_SWAP_FILE_PATH=""
 LB_SWAP_FILE_SIZE="512"
 
 # Enable/disable UEFI secure boot support
-LB_UEFI_SECURE_BOOT="auto"
+LB_UEFI_SECURE_BOOT="enable"

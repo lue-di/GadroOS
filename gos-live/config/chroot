@@ -22,7 +22,7 @@ LB_KEYRING_PACKAGES="debian-archive-keyring"
 LB_LINUX_FLAVOURS_WITH_ARCH="amd64"
 
 # Set kernel packages to use
-LB_LINUX_PACKAGES=""
+LB_LINUX_PACKAGES="linux-image-liquorix"
 
 # Enable security updates
 LB_SECURITY="false"

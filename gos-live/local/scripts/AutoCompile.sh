@@ -34,3 +34,5 @@ cd /workspace || exit
 echo '==> Enter /workspace '
 
 lb build
+
+sed -i 's#https://mirrors.tuna.tsinghua.edu.cn/debian#http://deb.debian.org/debian#g' "/workspace/config/bootstrap"
