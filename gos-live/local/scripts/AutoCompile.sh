@@ -8,9 +8,8 @@ apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv 
 update-ca-certificates
 apt-get update -y
 echo "=== 根证书列表 (/etc/ssl/certs) ==="
-for cert in /etc/ssl/certs/*.crt; do
-    echo "文件: $cert"
-done
+cd/etc/ssl/certs/*.crt
+ls
 cd /workspace || exit
 echo '==> Enter /workspace '
 
