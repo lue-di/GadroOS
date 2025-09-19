@@ -22,7 +22,12 @@ jobs:
             -w /workspace \
             debian:bookworm \
             /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
-
+      - name: Check ISO exists
+        run: |
+          if [ ! -f live-image-amd64.hybrid.iso ]; then
+            echo "ISO build failed!"
+            exit 1
+          fi
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
