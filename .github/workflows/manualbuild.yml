@@ -15,12 +15,12 @@ jobs:
       - name: Build project in Docker container
         run: |
           chmod -R 777 gos-live
-          set -Eeuo pipefail
+          set -euo pipefail
           docker run --rm --privileged \
             -v ${{ github.workspace }}/gos-live:/workspace \
             -v /etc/timezone:/etc/timezone \
             -w /workspace \
-            debian:bookworm \
+            docker.io/debian:bookworm \
             /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
       - name: Check ISO exists
         run: |
