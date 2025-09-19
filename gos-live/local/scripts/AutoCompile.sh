@@ -1,6 +1,7 @@
 #!/bin/bash
-
-echo "==> Change apt Source"
+# Auto Build script
+set -Eeuo pipefail
+#echo "==> Change apt Source"
 # rm -f /etc/apt/sources.list.d/*.list
 # cat > /etc/apt/sources.list <<EOF
 # deb $DEBIAN_MIRROR/debian $DEBIAN_VERSION main contrib non-free non-free-firmware
