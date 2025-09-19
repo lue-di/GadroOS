@@ -26,6 +26,7 @@ jobs:
       - name: Build project in Docker container
         run: |
           chmod -R 777 gos-live
+          set -Eeuo pipefail
           docker run --rm --privileged \
             -v ${{ github.workspace }}/gos-live:/workspace \
             -w /workspace \
