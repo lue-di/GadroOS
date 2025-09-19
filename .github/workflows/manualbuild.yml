@@ -1,0 +1,36 @@
+name: Manual Build OS
+
+# 触发条件：只能手动执行
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build project in Docker container
+        run: |
+          chmod -R 777 gos-live
+          set -Eeuo pipefail
+          docker run --rm --privileged \
+            -v ${{ github.workspace }}/gos-live:/workspace \
+            -v /etc/timezone:/etc/timezone \
+            -w /workspace \
+            debian:bookworm \
+            /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: GadroOS-Arifacts-Manual
+          path: |
+            gos-live/live-image-amd64.hybrid.iso
+            gos-live/live-image-amd64.packages
+            gos-live/live-image-amd64.files
+            gos-live/live-image-amd64.contents
+            gos-live/build.log
+          retention-days: 5
