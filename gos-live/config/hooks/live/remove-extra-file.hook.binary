@@ -1,5 +1,27 @@
 #!/bin/sh
+set -e
 
-echo "Removing Extra inird and vmlinuz"
-rm -f binary/live/initrd.img-*
-rm -f binary/live/vmlinuz-*
+LIVE_DIR="binary/live"
+
+# 处理 vmlinuz
+if [ -f "${LIVE_DIR}/vmlinuz" ]; then
+  for f in "${LIVE_DIR}"/vmlinuz-*; do
+    [ -e "$f" ] || continue
+    # 若与不带版本号的 vmlinuz 完全一致，则删除
+    if cmp -s "${LIVE_DIR}/vmlinuz" "$f"; then
+      echo "Pruning duplicate kernel: $f"
+      rm -f -- "$f"
+    fi
+  done
+fi
+
+# 处理 initrd
+ if [ -f "${LIVE_DIR}/initrd.img" ]; then
+   for f in "${LIVE_DIR}"/initrd.img-*; do
+     [ -e "$f" ] || continue
+     if cmp -s "${LIVE_DIR}/initrd.img" "$f"; then
+       echo "Pruning duplicate initrd: $f"
+       rm -f -- "$f"
+     fi
+   done
+ fi

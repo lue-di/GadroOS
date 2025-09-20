@@ -18,6 +18,7 @@ lb config noauto \
             --compression xz \
             --debian-installer none \
             --interactive false \
+            --firmware-chroot false \
             --cache-indices false \
             --archive-areas "main contrib non-free non-free-firmware" \
             --initramfs live-boot \

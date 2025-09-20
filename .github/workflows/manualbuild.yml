@@ -38,4 +38,4 @@ jobs:
             gos-live/live-image-amd64.files
             gos-live/live-image-amd64.contents
             gos-live/build.log
-          retention-days: 5
+          retention-days: 1

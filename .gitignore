@@ -15,3 +15,8 @@ gos-live/live-image-amd64.files
 gos-live/live-image-amd64.hybrid.iso
 gos-live/live-image-amd64.hybrid.iso.zsync
 gos-live/live-image-amd64.packages
+gos-live/config/binary
+gos-live/config/bootstrap
+gos-live/config/chroot
+gos-live/config/common
+gos-live/config/source
