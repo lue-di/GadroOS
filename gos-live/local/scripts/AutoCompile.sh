@@ -8,7 +8,6 @@ apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv 
 update-ca-certificates
 apt-get update -y
 echo "=== Sources ==="
-cat /etc/apt/sources.list
 cat /etc/apt/sources.list.d/debian.sources
 cd /workspace || exit
 echo '==> Enter /workspace '
