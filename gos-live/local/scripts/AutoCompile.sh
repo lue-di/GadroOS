@@ -5,7 +5,7 @@ set -euo pipefail
 echo '==> Update Apt Package...'
 apt-get update && apt-get upgrade -y
 apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg apt-transport-https wget
-apt install --only-upgrade ca-certificates
+apt install --only-upgrade -y ca-certificates
 apt-get update -y
 echo "=== Sources ==="
 
