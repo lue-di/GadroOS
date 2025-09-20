@@ -9,8 +9,8 @@ apt install --only-upgrade -y ca-certificates
 apt-get update -y
 echo "=== Sources ==="
 
-cat /etc/apt/sources.list.d/debian.sources
-
+ echo 'Acquire::https::Verify-Peer "false";' >> /etc/apt/apt.conf.d/99disable-signature-verification
+ echo 'Acquire::https::Verify-Host "false";' >> /etc/apt/apt.conf.d/99disable-signature-verification
 cd /workspace || exit
 echo '==> Enter /workspace '
 
