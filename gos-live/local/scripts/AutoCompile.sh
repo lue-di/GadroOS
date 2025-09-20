@@ -4,13 +4,12 @@ set -euo pipefail
 
 echo '==> Update Apt Package...'
 apt-get update && apt-get upgrade -y
-apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg apt-transport-https wget
-apt install --only-upgrade -y ca-certificates
+apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg
+apt-get install --only-upgrade -y ca-certificates
 update-ca-certificates
 apt-get update -y
 echo "=== Sources ==="
-echo 'Acquire::https::Verify-Peer "false";' >> /etc/apt/apt.conf.d/99disable-signature-verification
-echo 'Acquire::https::Verify-Host "false";' >> /etc/apt/apt.conf.d/99disable-signature-verification
+
 cd /workspace || exit
 echo '==> Enter /workspace '
 

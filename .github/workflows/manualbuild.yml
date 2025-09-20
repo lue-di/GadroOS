@@ -20,7 +20,7 @@ jobs:
             -v ${{ github.workspace }}/gos-live:/workspace \
             -v /etc/timezone:/etc/timezone \
             -w /workspace \
-            docker.io/debian:bookworm \
+            docker.m.daocloud.io/debian:bookworm \
             /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
       - name: Check ISO exists
         run: |
