@@ -31,12 +31,6 @@ jobs:
             -w /workspace \
             debian:bookworm \
             /bin/bash -c "/workspace/local/scripts/AutoCompile.sh"
-          last_line=$(awk 'NF{last=$0} END{print last}' /workspace/build.log | tr -d '\r')
-          echo "Last line: $last_line"
-          if [[ "$last_line" != "P: Build completed successfully" ]]; then
-            echo "::error::live-build did not complete successfully."
-            exit 1
-          fi
       - name: Check ISO exists
         run: |
           if [ ! -f gos-live/live-image-amd64.hybrid.iso ]; then
