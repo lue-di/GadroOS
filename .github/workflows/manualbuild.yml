@@ -16,7 +16,7 @@ jobs:
         run: |
           chmod -R 777 gos-live
           set -euo pipefail
-          docker run --rm --privileged \
+          sudo docker run --rm --privileged \
             -v ${{ github.workspace }}/gos-live:/workspace \
             -v /etc/timezone:/etc/timezone \
             -w /workspace \
