@@ -4,11 +4,13 @@ set -euo pipefail
 
 echo '==> Update Apt Package...'
 apt-get update && apt-get upgrade -y
-apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg ca-certificates apt-transport-https wget
-update-ca-certificates
+apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg apt-transport-https wget
+apt install --only-upgrade ca-certificates
 apt-get update -y
 echo "=== Sources ==="
+
 cat /etc/apt/sources.list.d/debian.sources
+
 cd /workspace || exit
 echo '==> Enter /workspace '
 

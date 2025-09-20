@@ -1,2 +1,2 @@
-deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/liquorix-keyring.gpg.key.gpg] http://liquorix.net/debian bookworm main
-deb-src [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/liquorix-keyring.gpg.key.gpg] http://liquorix.net/debian bookworm main
+deb [arch=amd64 trusted=yes signed-by=/etc/apt/trusted.gpg.d/liquorix-keyring.gpg.key.gpg] https://liquorix.net/debian bookworm main
+deb-src [arch=amd64 trusted=yes signed-by=/etc/apt/trusted.gpg.d/liquorix-keyring.gpg.key.gpg] https://liquorix.net/debian bookworm main
