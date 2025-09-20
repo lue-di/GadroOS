@@ -7,9 +7,8 @@ apt-get update && apt-get upgrade -y
 apt-get install -y --no-install-recommends live-build debootstrap  systemd-sysv iputils-ping curl  curl gpg ca-certificates apt-transport-https wget
 update-ca-certificates
 apt-get update -y
-echo "=== 根证书列表 (/etc/ssl/certs) ==="
-cd /etc/ssl/certs/
-ls
+echo "=== Sources ==="
+cat /etc/apt/sources.list
 cd /workspace || exit
 echo '==> Enter /workspace '
 
