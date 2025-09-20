@@ -7,7 +7,7 @@ lb clean
 
 lb config noauto \
             --distribution bookworm \
-            --debootstrap-options "--variant=minbase" \
+            --debootstrap-options "--variant=minbase --include=ca-certificates,gnupg,curl" \
             --memtest memtest86+ \
             --architecture amd64 \
             --bootappend-live "boot=live components nottyautologin nosplash" \
