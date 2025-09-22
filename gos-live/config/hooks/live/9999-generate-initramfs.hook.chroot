@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+for d in /lib/modules/*; do
+  k="$(basename "$d")"
+  update-initramfs -c -k "$k"
+done

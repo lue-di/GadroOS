@@ -2,7 +2,7 @@
 
 set -e
 
-lb clean noauto "${@}"
+lb clean noauto --purge "${@}"
 
 rm -f config/binary config/bootstrap config/chroot config/common config/source
 rm -f build.log

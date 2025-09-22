@@ -1,0 +1,1 @@
+deb [signed-by=/etc/apt/trusted.gpg.d/xanmod-archive-keyring.gpg.key.gpg] http://deb.xanmod.org bookworm main

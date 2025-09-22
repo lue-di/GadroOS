@@ -10,7 +10,7 @@ cd /workspace || exit
 echo '==> Enter /workspace '
 
 sed -i 's#https://mirrors.tuna.tsinghua.edu.cn/debian#http://deb.debian.org/debian#g' "/workspace/auto/config"
-
+lb clean
 lb build
 
 exit $?

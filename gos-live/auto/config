@@ -26,7 +26,8 @@ lb config noauto \
             --iso-publisher "GadroOS Projet Powered by luedi" \
             --iso-volume "GadroOS Live" \
             --iso-preparer "GadroOS with live build @LB_VERSION@;" \
-            --linux-packages "linux-image-liquorix" \
+            --linux-packages "linux-xanmod-lts" \
+            --linux-flavours "x64v3" \
             --binary-filesystem fat32 \
             --zsync false \
             --updates false \
